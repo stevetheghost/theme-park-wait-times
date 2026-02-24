@@ -1,0 +1,4 @@
+
+@for(attraction of attractions(); track attraction){
+    <div>{{attraction.name}} - {{attraction.queue?.STANDBY?.waitTime}}</div>
+}
