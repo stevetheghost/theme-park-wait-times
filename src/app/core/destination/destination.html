@@ -1,5 +1,17 @@
 <div class="p-4">
-@for(park of destination()?.parks; track park){
-    <app-park [park]="park"/>
-}
+    <p-tabs [value]="parks()?.at(0)?.id">
+        <p-tablist  >
+            @for(park of parks(); track park){
+            <p-tab [value]="park.id">{{park.name}}</p-tab>
+            }
+        </p-tablist>
+        <p-tabpanels>
+            @for(park of parks(); track park){
+            <p-tabpanel [value]="park.id">
+                <app-park [park]="park" />
+            </p-tabpanel>
+            }
+        </p-tabpanels>
+    </p-tabs>
+
 </div>
