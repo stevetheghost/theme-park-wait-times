@@ -1,1 +1,14 @@
-<p>attraction works!</p>
+<div class="border border-primary-1 rounded-sm p-2 border-primitive-1 h-full">
+    <div class="text-lg font-semibold line-clamp-1" [pTooltip]="name()" >{{name()}}</div>
+    <div class="mt-1 flex justify-between">
+        <p-tag [severity]="getSeverityForAttractionStatus(status())">{{status()}}</p-tag>
+        @if(standbyWaitTime()){<p-tag>{{ standbyWaitTime() }} min
+            wait</p-tag>}
+    </div>
+    @if(lightningLaneStatus() == 'AVAILABLE'){
+    <div class="mt-1 flex justify-end">
+        <p-tag severity="success">Lightening Lane @ {{nextLightningLaneTime()}}</p-tag>
+    </div>
+    }
+
+</div>

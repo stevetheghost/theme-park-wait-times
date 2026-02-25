@@ -1,4 +1,5 @@
-
+<div class="grid grid-cols-3 gap-4 ">
 @for(attraction of attractions(); track attraction){
-    <div>{{attraction.name}} - {{attraction.queue?.STANDBY?.waitTime}}</div>
+    <app-attraction [attraction]="attraction"></app-attraction>
 }
+</div>

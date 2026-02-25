@@ -3,10 +3,11 @@ import { DestinationParkEntry, EntityChild, EntityChildrenResponse, EntityLiveDa
 import { first, firstValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Attraction } from "../attraction/attraction";
 
 @Component({
   selector: 'app-park',
-  imports: [],
+  imports: [Attraction],
   templateUrl: './park.html',
   styleUrl: './park.css',
 })
